@@ -1,141 +1,126 @@
 @extends('layouts.app')
-
+{{ $defaultImage = ""; 
+   
+}}
+{{ 
+    $isGuest = "";
+}}
 @section('content')
-
-<div class="container">
-
-
-<div class="container-fluid mt-5 mb-5"> 
-    <div class="row g-2"> 
-        <div class="col-md-3"> 
-            <div class="t-products p-2"> 
-                <h6 class="text-uppercase">Computer & Periferals</h6> 
-                <div class="p-lists"> 
-                    <div class="d-flex justify-content-between mt-2"> <span>Products</span> <span>{{ count($products) }}</span> 
-                </div> 
-                
-                <div class="d-flex justify-content-between mt-2"> <span>Desktops</span> 
-                <span>46</span> 
-            
-                </div> 
-            <div class="d-flex justify-content-between mt-2"> 
-                <span>Monitors</span> 
-                <span>13</span> 
-            </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> 
-                <span>Mouse</span> 
-                <span>33</span> 
-            </div> 
-
-        <div class="d-flex justify-content-between mt-2"> 
-            <span>Keyboard</span> <span>12</span> 
-        </div> 
-        
-        <div class="d-flex justify-content-between mt-2"> 
-            <span>Printer</span> <span>53</span> 
-        </div> 
-        
-        <div class="d-flex justify-content-between mt-2"> 
-            <span>Mobiles</span> <span>203</span> 
-        </div> 
-        <div class="d-flex justify-content-between mt-2"> 
-            <span>CPU</span> <span>23</span> 
-        </div> 
-    
-    </div> </div> 
-        
-        
-        <div class="processor p-2"> 
-            <div class="heading d-flex justify-content-between align-items-center"> <h6 class="text-uppercase">Processor</h6> <span>--</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Intel Core i7 </label> </div> <span>3</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i6 </label> </div> <span>4</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i3 </label> </div> <span>14</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Centron </label> </div> <span>8</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Pentinum </label> </div> <span>14</span> </div> </div> 
-        
-        
-        <div class="brand p-2"> 
-            <div class="heading d-flex justify-content-between align-items-center"> 
-                <h6 class="text-uppercase">Brand</h6> 
-            <span>--</span> 
-        </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Apple </label> </div> <span>13</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Asus </label> </div> <span>4</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Dell </label> </div> <span>24</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Lenovo </label> </div> <span>18</span> </div> 
-            
-            <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Acer </label> </div> <span>44</span> </div> </div> 
-        
-        
-        <div class="type p-2 mb-2"> 
-            
-        <div class="heading d-flex justify-content-between align-items-center"> <h6 class="text-uppercase">Type</h6> 
-        <span>--</span> 
-        </div> 
-        
-        <div class="d-flex justify-content-between mt-2"> 
-            <div class="form-check"> 
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 
-            <label class="form-check-label" for="flexCheckDefault"> Hybrid </label>
-            </div> 
-            <span>23</span> 
-        </div> 
-        
-        <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Laptop </label> </div> <span>24</span> </div> 
-        
-        <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Desktop </label> </div> <span>14</span> </div> 
-        
-        <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Touch </label> </div> <span>28</span> </div> 
-        
-        <div class="d-flex justify-content-between mt-2"> <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Tablets </label> </div> <span>44</span> </div> </div> </div> <div class="col-md-9"> 
-    
-
-<div class="row g-2"> 
-    
-
-@foreach($products as $product)
-<div class="col-md-4"> 
-    <div class="product py-4"> 
-        <span class="off bg-success">-25% OFF</span> <?php /* <span class="off bg-warning">SALE</span> */ ?>
-        <div class="text-center"> 
-            @if (!is_null($product->image_path))
-            <img src="{{ asset('storage/' . $product->image_path) }}" width="200"> 
-            @else
-            <img src="https://i.imgur.com/nOFet9u.jpg" width="200"> 
-            @endif
-        </div> 
-        <div class="about text-center"> 
-            <h5>{{ $product->name }}</h5> 
-            <span>{{ $product->price }} PLN</span> 
-        </div> 
-        <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> 
-            <button class="btn btn-primary text-uppercase">Add to cart</button> 
-            
-            <div class="add"> 
-                <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> 
-            </div> 
-        </div> 
-    </div> 
-</div> 
-@endforeach
-    
-    
-    
-    </div> </div> </div>
-</div>
-
-
-
-</div>
-
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-8 order-md-2 col-lg-9">
+                <div class="container-fluid">
+                    <div class="row   mb-5">
+                        <div class="col-12">
+                            <div class="dropdown text-md-left text-center float-md-left mb-3 mt-3 mt-md-0 mb-md-0">
+                                <label class="mr-2">Sort by:</label>
+                                <a class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relevance <span class="caret"></span></a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" x-placement="bottom-start" style="position: absolute; transform: translate3d(71px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                    <a class="dropdown-item" href="#">Relevance</a>
+                                    <a class="dropdown-item" href="#">Price Descending</a>
+                                    <a class="dropdown-item" href="#">Price Ascending</a>
+                                    <a class="dropdown-item" href="#">Best Selling</a>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-left"></span> </button>
+                                <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
+                            </div>
+                            <div class="dropdown float-right">
+                                <a class="btn btn-lg btn-light dropdown-toggle products-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
+                                <div class="dropdown-menu dropdown-menu-right products-count" aria-labelledby="navbarDropdown" x-placement="bottom-end" style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
+                                    <a class="dropdown-item" href="#">5</a>
+                                    <a class="dropdown-item" href="#">10</a>
+                                    <a class="dropdown-item" href="#">15</a>
+                                    <a class="dropdown-item" href="#">20</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="products-wrapper">
+                        @foreach($products as $product)
+                            <div class="col-6 col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100 border-0">
+                                    <div class="card-img-top">
+                                        @if(!is_null($product->image_path))
+                                            <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mx-auto d-block" alt="Zdjęcie produktu">
+                                        @else
+                                            <img src="{{ $defaultImage }}" class="img-fluid mx-auto d-block" alt="Zdjęcie produktu">
+                                        @endif
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title">
+                                            {{ $product->name }}
+                                        </h4>
+                                        <h5 class="card-price small">
+                                            <i>PLN {{ $product->price }}</i>
+                                        </h5>
+                                    </div>
+                                    <button class="btn btn-success btn-sm add-cart-button" data-id="{{ $product->id }}" @guest disabled @endguest>
+                                        <i class="fas fa-cart-plus"></i> Dodaj do koszyka
+                                    </button>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="row sorting mb-5 mt-5">
+                        <div class="col-12">
+                            <a class="btn btn-light">
+                                <i class="fas fa-arrow-up mr-2"></i> Back to top</a>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-left"></span> </button>
+                                <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
+                            </div>
+                            <div class="dropdown float-md-right">
+                                <a class="btn btn-light btn-lg dropdown-toggle products-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
+                                <div class="dropdown-menu products-count" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">5</a>
+                                    <a class="dropdown-item" href="#">10</a>
+                                    <a class="dropdown-item" href="#">15</a>
+                                    <a class="dropdown-item" href="#">20</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="col-md-4 order-md-1 col-lg-3 sidebar-filter">
+                <h3 class="mt-0 mb-5">{{ __('shop.welcome.products') }} <span class="text-primary">{{ count($products) }}</span></h3>
+                <h6 class="text-uppercase font-weight-bold mb-3">{{ __('shop.welcome.categories') }}</h6>
+                @foreach($categories as $category)
+                    <div class="mt-2 mb-2 pl-2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="filter[categories][]" id="category-{{ $category->id }}" value="{{ $category->id }}">
+                            <label class="custom-control-label" for="category-{{ $category->id }}">{{ $category->name }}</label>
+                        </div>
+                    </div>
+                @endforeach
+                <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
+                <h6 class="text-uppercase mt-5 mb-3 font-weight-bold">{{ __('shop.welcome.price') }}</h6>
+                <div class="price-filter-control">
+                    <input type="number" class="form-control w-50 pull-left mb-2" placeholder="50" name="filter[price_min]" id="price-min-control">
+                    <input type="number" class="form-control w-50 pull-right" placeholder="150" name="filter[price_max]" id="price-max-control">
+                </div>
+                <input id="ex2" type="text" class="slider " value="50,150" data-slider-min="10" data-slider-max="200" data-slider-step="5" data-slider-value="[50,150]" data-value="50,150" style="display: none;">
+                <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
+                <a href="#" class="btn btn-lg btn-block btn-primary mt-5" id="filter-button"><i class="fas fa-search"></i> {{ __('shop.welcome.filter') }}</a>
+            </form>
+        </div>
+    </div>
 @endsection
+
+<!--
+@section('javascript')
+    const WELCOME_DATA = {
+        storagePath: '{{ asset('storage') }}/',
+        defaultImage: '{{ $defaultImage }}',
+        addToCart: '{{ url('cart') }}/',
+        listCart: '{{ url('cart') }}',
+        isGuest: '{{ $isGuest }}'
+    }
+@endsection
+@section('js-files')
+    <script src="{{ asset("js/welcome.js") }}"></script>
+@endsection
+
+-->
