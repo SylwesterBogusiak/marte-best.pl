@@ -1,10 +1,5 @@
 @extends('layouts.app')
-{{ $defaultImage = ""; 
-   
-}}
-{{ 
-    $isGuest = "";
-}}
+
 @section('content')
     <div class="container pt-5">
         <div class="row">
@@ -12,22 +7,30 @@
                 <div class="container-fluid">
                     <div class="row   mb-5">
                         <div class="col-12">
-                            <div class="dropdown text-md-left text-center float-md-left mb-3 mt-3 mt-md-0 mb-md-0">
+
+
+
+
+
+                            <div class="dropdown text-md-start text-center float-md-start mb-3 mt-3 mt-md-0 mb-md-0">
                                 <label class="mr-2">Sort by:</label>
-                                <a class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relevance <span class="caret"></span></a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" x-placement="bottom-start" style="position: absolute; transform: translate3d(71px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                    <a class="dropdown-item" href="#">Relevance</a>
-                                    <a class="dropdown-item" href="#">Price Descending</a>
-                                    <a class="dropdown-item" href="#">Price Ascending</a>
-                                    <a class="dropdown-item" href="#">Best Selling</a>
-                                </div>
+                                
+                               <a class="btn btn-lg btn-light dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#" >Relevance <span class="caret"></span></a>
+                                <ul  class="dropdown-menu" aria-labelledby="navbarDropdown" x-placement="bottom-start" style="position: absolute; transform: translate3d(71px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                    <li><a class="dropdown-item" href="#">Relevance</a></li>
+                                    <li><a class="dropdown-item" href="#">Price Descending</a></li>
+                                    <li><a class="dropdown-item" href="#">Price Ascending</a></li>
+                                    <li><a class="dropdown-item" href="#">Best Selling</a></li>
+                                </ul>
                             </div>
+                            
                             <div class="btn-group">
                                 <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-left"></span> </button>
                                 <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
                             </div>
-                            <div class="dropdown float-right">
-                                <a class="btn btn-lg btn-light dropdown-toggle products-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
+                            
+                            <div class="dropdown float-end">
+                                <a class="btn btn-lg btn-light dropdown-toggle products-actual-count" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
                                 <div class="dropdown-menu dropdown-menu-right products-count" aria-labelledby="navbarDropdown" x-placement="bottom-end" style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
                                     <a class="dropdown-item" href="#">5</a>
                                     <a class="dropdown-item" href="#">10</a>
@@ -35,8 +38,12 @@
                                     <a class="dropdown-item" href="#">20</a>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
+
+
                     <div class="row" id="products-wrapper">
                         @foreach($products as $product)
                             <div class="col-6 col-md-6 col-lg-4 mb-3">
@@ -71,8 +78,8 @@
                                 <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-left"></span> </button>
                                 <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
                             </div>
-                            <div class="dropdown float-md-right">
-                                <a class="btn btn-light btn-lg dropdown-toggle products-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
+                            <div class="dropdown float-md-end">
+                                <a class="btn btn-light btn-lg dropdown-toggle products-actual-count" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
                                 <div class="dropdown-menu products-count" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">5</a>
                                     <a class="dropdown-item" href="#">10</a>
@@ -98,8 +105,8 @@
                 <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
                 <h6 class="text-uppercase mt-5 mb-3 font-weight-bold">{{ __('shop.welcome.price') }}</h6>
                 <div class="price-filter-control">
-                    <input type="number" class="form-control w-50 pull-left mb-2" placeholder="50" name="filter[price_min]" id="price-min-control">
-                    <input type="number" class="form-control w-50 pull-right" placeholder="150" name="filter[price_max]" id="price-max-control">
+                    <input type="number" min="0" class="form-control w-50 pull-left mb-2" placeholder="50" name="filter[price_min]" id="price-min-control">
+                    <input type="number" max="1000000" class="form-control w-50 pull-right" placeholder="150" name="filter[price_max]" id="price-max-control">
                 </div>
                 <input id="ex2" type="text" class="slider " value="50,150" data-slider-min="10" data-slider-max="200" data-slider-step="5" data-slider-value="[50,150]" data-value="50,150" style="display: none;">
                 <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
@@ -107,10 +114,17 @@
             </form>
         </div>
     </div>
+
+
+
+
+
+
 @endsection
 
-<!--
+
 @section('javascript')
+<script>
     const WELCOME_DATA = {
         storagePath: '{{ asset('storage') }}/',
         defaultImage: '{{ $defaultImage }}',
@@ -118,9 +132,10 @@
         listCart: '{{ url('cart') }}',
         isGuest: '{{ $isGuest }}'
     }
+    </script>
 @endsection
 @section('js-files')
-    <script src="{{ asset("js/welcome.js") }}"></script>
+    @vite(['resources/js/welcome.js'])
 @endsection
 
--->
+
