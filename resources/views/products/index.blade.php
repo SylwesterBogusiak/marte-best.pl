@@ -9,13 +9,13 @@
     <div class="row">
     <div class="w-100"></div>
         <div class="col">
-            <h1>{{ __('shop.product.index_title') }}</h1>
+            <h1><i class="fas fa-list"></i> {{ __('shop.product.index_title') }}</h1>
         </div> 
 
         
         <div class="col">
             <a class="float-end" href="{{ route('products.create') }}"> 
-            <button type="button" class="btn btn-primary">Dodaj</button>
+            <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> {{ __('shop.button.add') }}</button>
 
             </a>
         </div>
@@ -47,10 +47,10 @@
       <td>@if($product->hasCategory()) {{ $product->category->name }} @endif</td>
       <td> 
             <a href="{{ route('products.edit', $product->id) }}"> 
-            <button class="btn btn-success btn-sm">E</button></a>
+            <button class="btn btn-success btn-sm"><i class="fas fa-edit"></i></button></a>
             <a href="{{ route('products.show', $product->id) }}"> 
-            <button class="btn btn-primary btn-sm">P</button></a>
-      <button class="btn btn-danger btn-sm delete" data-id="{{ $product->id }}">X</button>
+            <button class="btn btn-primary btn-sm"><i class="fas fa-search"></i></button></a>
+      <button class="btn btn-danger btn-sm delete" data-id="{{ $product->id }}"><i class="fas fa-trash"></i></button>
 
       </td>
     </tr>

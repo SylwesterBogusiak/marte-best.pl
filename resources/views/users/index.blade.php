@@ -9,7 +9,7 @@
     <div class="row">
     <div class="w-100"></div>
         <div class="col">
-            <h1>{{ __('shop.user.index_title') }}</h1>
+            <h1><i class="fas fa-users"></i> {{ __('shop.user.index_title') }}</h1>
         </div>
     
     </div>
@@ -35,7 +35,7 @@
       <td>{{ $user->surname }}</td>
       <td>{{ $user->phone_number }}</td>
       <td> 
-      <button class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}">X</button>
+      <button class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}"><i class="fas fa-trash"></i></button>
 
       </td>
     </tr>
