@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+
+@include('helpers.flash-messages')
+  
+
     <div class="row">
     <div class="w-100"></div>
         <div class="col">

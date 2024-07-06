@@ -68,6 +68,7 @@ class UserController extends Controller
         try {
             
             $user->delete();
+            Session::flash('status', __('shop.user.status.delete.success'));
             return response()->json([
                 'status' => 'success'
             ]);
