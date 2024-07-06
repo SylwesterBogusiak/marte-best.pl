@@ -15,7 +15,7 @@ $(document).ready(function() {
 });
 swalWithBootstrapButtons.fire({
   title: confirmDelete,
-  text: "You won't be able to revert this!",
+  text: confirmDeletewarning,
   icon: "warning",
   showCancelButton: true,
   confirmButtonText: "Tak",

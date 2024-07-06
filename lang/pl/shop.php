@@ -11,8 +11,10 @@ return [
         'actions' => 'Akcje'
     ],
     'messages' => [
-      'delete_confirm' => 'Czy na pewno chcesz usunąć rekord?'
+      'delete_confirm' => 'Czy na pewno chcesz usunąć rekord?',
+      'delete_confirm_warning' => 'Nie będzie można tego cofnąć.'
     ],
+    
     'button' => [
         'save' => 'Zapisz',
         'add' => 'Dodaj',

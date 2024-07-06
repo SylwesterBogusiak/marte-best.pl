@@ -49,7 +49,8 @@
 @section('javascript')
 <script>
 const deleteUrl = "{{ url('users') }}/";
-const confirmDelete = "__('shop.message.delete_confirm')";
+const confirmDelete = "{{ __('shop.messages.delete_confirm') }}";
+const confirmDeletewarning = "{{ __('shop.messages.delete_confirm_warning') }}"; 
 </script>
 @endsection
 

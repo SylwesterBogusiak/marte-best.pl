@@ -10,7 +10,8 @@
     <div class="w-100"></div>
         <div class="col">
             <h1>{{ __('shop.product.index_title') }}</h1>
-        </div>
+        </div> 
+
         
         <div class="col">
             <a class="float-end" href="{{ route('products.create') }}"> 
@@ -65,7 +66,8 @@
 @section('javascript')
 <script>
 const deleteUrl = "{{ url('products') }}/";
-const confirmDelete = "__('shop.message.delete_confirm')";
+const confirmDelete = "{{ __('shop.messages.delete_confirm') }}";
+const confirmDeletewarning = "{{ __('shop.messages.delete_confirm_warning') }}"; 
 </script>
 @endsection
 

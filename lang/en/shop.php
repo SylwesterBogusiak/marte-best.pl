@@ -11,7 +11,8 @@ return [
         'actions' => 'Actions'
     ],
     'messages' => [
-      'delete_confirm' => 'Are you sure?'
+      'delete_confirm' => 'Are you sure?',
+      'delete_confirm_warning' => 'You won\'t be able to revert this.'
     ],
     'button' => [
         'save' => 'Save',
