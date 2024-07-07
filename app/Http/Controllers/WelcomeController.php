@@ -40,7 +40,7 @@ class WelcomeController extends Controller
         return view("welcome", [
             'products' => $query->paginate($paginate),
             'categories' => ProductCategory::orderBy('name', 'ASC')->get(),
-            'defaultImage' => '', //config('shop.defaultImage')
+            'defaultImage' => config('shop.defaultImage'),
             'isGuest' => Auth::guest()
         ]);
     }
