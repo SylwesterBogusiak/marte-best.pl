@@ -26,6 +26,7 @@ $(function() {
                 cancelButtonText: '<i class="fas fa-shopping-bag"></i> Kontynuuj zakupy'
             }).then((result) => {
                 if (result.isConfirmed) {
+                
                     window.location = WELCOME_DATA.listCart;
                 }
             })
