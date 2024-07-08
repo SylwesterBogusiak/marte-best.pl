@@ -35,9 +35,11 @@ Route::middleware(['auth','verified'])->group(function() {
 
         Route::resource('/products', ProductController::class);
 
-        Route::get('/users/list', [UserController::class,'index']);
+        Route::resource('/users', UserController::class)->only(['index', 'edit', 'update', 'destroy']);
 
-        Route::delete('/users/{user}', [UserController::class,'destroy']);
+       // Route::get('/users/list', [UserController::class,'index']);
+
+       // Route::delete('/users/{user}', [UserController::class,'destroy']);
     });
 
     
