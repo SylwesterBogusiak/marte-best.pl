@@ -18,7 +18,7 @@
                             <label for="city" class="col-md-4 col-form-label text-md-end">Miasto</label>
 
                             <div class="col-md-6">
-                                <input id="city" type="text" maxlength="500" class="form-control @error('city') is-invalid @enderror" name="address[city]" value="@if ($user->hasAddress()) {{ $user->address->city }} @endif" required autocomplete="city" autofocus>
+                                <input id="city" type="text" maxlength="500" class="form-control @error('city') is-invalid @enderror" name="address[city]" value="{{ $user?->address?->city }}" required autocomplete="city" autofocus>
 
                                 @error('city')
                                     <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
                             <label for="zip_code" class="col-md-4 col-form-label text-md-end">Kod pocztowy</label>
 
                             <div class="col-md-6">
-                                <input id="zip_code" type="text" maxlength="500" class="form-control @error('zip_code') is-invalid @enderror" name="address[zip_code]" value="@if ($user->hasAddress()) {{ $user->address->zip_code }} @endif" required autocomplete="zip_code" autofocus>
+                                <input id="zip_code" type="text" maxlength="500" class="form-control @error('zip_code') is-invalid @enderror" name="address[zip_code]" value="{{ $user?->address?->zip_code }}" required autocomplete="zip_code" autofocus>
 
                                 @error('zip_code')
                                     <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
                             <label for="street" class="col-md-4 col-form-label text-md-end">Ulica</label>
 
                             <div class="col-md-6">
-                                <input id="street" type="text" maxlength="500" class="form-control @error('street') is-invalid @enderror" name="address[street]" value="@if ($user->hasAddress()) {{ $user->address->street }} @endif" required autocomplete="street" autofocus>
+                                <input id="street" type="text" maxlength="500" class="form-control @error('street') is-invalid @enderror" name="address[street]" value="{{ $user?->address?->street }}" required autocomplete="street" autofocus>
 
                                 @error('street')
                                     <span class="invalid-feedback" role="alert">
@@ -61,7 +61,7 @@
                             <label for="street_no" class="col-md-4 col-form-label text-md-end">Numer ulicy</label>
 
                             <div class="col-md-6">
-                                <input id="street_no" type="text" maxlength="500" class="form-control @error('street_no') is-invalid @enderror" name="address[street_no]" value="@if ($user->hasAddress())  {{ $user->address->street_no }} @endif" required autocomplete="street_no" autofocus>
+                                <input id="street_no" type="text" maxlength="500" class="form-control @error('street_no') is-invalid @enderror" name="address[street_no]" value=" {{ $user?->address?->street_no }}" required autocomplete="street_no" autofocus>
 
                                 @error('street_no')
                                     <span class="invalid-feedback" role="alert">
@@ -75,7 +75,7 @@
                             <label for="home_no" class="col-md-4 col-form-label text-md-end">Numer domu</label>
 
                             <div class="col-md-6">
-                                <input id="home_no" type="text" maxlength="500" class="form-control @error('home_no') is-invalid @enderror" name="address[home_no]" value="@if ($user->hasAddress()) {{ $user->address->home_no }} @endif" required autocomplete="home_no" autofocus>
+                                <input id="home_no" type="text" maxlength="500" class="form-control @error('home_no') is-invalid @enderror" name="address[home_no]" value="{{ $user?->address?->home_no }}" required autocomplete="home_no" autofocus>
 
                                 @error('home_no')
                                     <span class="invalid-feedback" role="alert">

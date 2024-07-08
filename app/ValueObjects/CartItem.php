@@ -28,7 +28,7 @@ public function __construct(Product $product, int $quantity = 1)
 /**
  * Get the value of productId
  */ 
-public function getProductId()
+public function getProductId(): int
 {
 return $this->productId;
 }
@@ -37,7 +37,7 @@ return $this->productId;
 /**
  * Get the value of name
  */ 
-public function getName()
+public function getName(): string
 {
 return $this->name;
 }
@@ -46,7 +46,7 @@ return $this->name;
 /**
  * Get the value of price
  */ 
-public function getPrice()
+public function getPrice(): float
 {
 return $this->price;
 }
@@ -56,7 +56,7 @@ return $this->price;
 /**
  * Get the value of quantity
  */ 
-public function getQuantity()
+public function getQuantity(): int
 {
 return $this->quantity;
 }
@@ -65,7 +65,7 @@ return $this->quantity;
 /**
  * Get the value of imagePath
  */ 
-public function getImagePath()
+public function getImagePath(): ?string
 {
 return $this->imagePath;
 }
